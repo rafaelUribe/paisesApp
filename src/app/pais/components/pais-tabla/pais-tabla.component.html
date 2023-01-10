@@ -11,6 +11,7 @@
     <tbody>
         <tr
             *ngFor="let pais of paises, let i = index"
+            class="animate__animated animate__fadeIn animate__slow"
         >
             <td>
                 {{i + 1}}
@@ -23,7 +24,7 @@
                 >
             </td>
             <td>
-                {{pais.capital[0]}} - {{pais.name.common}}
+                {{pais.capital ? pais.capital[0] + " - " : ""}}  {{pais.name.common}}
             </td>
             <td>
                 {{pais.population | number}}

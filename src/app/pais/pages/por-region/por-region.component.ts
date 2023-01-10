@@ -38,14 +38,12 @@ export class PorRegionComponent {
 
   activarRegion( region: string) {
     this.regionActiva = region;
-    console.log(this.regionActiva)
 
     this.hayError = false;
 
     this.paisService.buscarRegion(this.regionActiva)
       .subscribe( (paises) => {
-        this.paises = [...paises]
-        console.log(this.paises)
+        this.paises = paises
       }, (err) => {
         this.hayError = true;
         this.paises = [];

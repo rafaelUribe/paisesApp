@@ -9,7 +9,6 @@ import { Country } from '../interfaces/pais.interface';
 export class PaisService {
 
   private apiUrl: string = `https://restcountries.com/v3.1`
-  private v2url: string = `https://restcountries.com/v2`
 
   constructor(private http: HttpClient) { }
 
@@ -31,7 +30,6 @@ export class PaisService {
 
   buscarRegion( region: string): Observable<Country[]>{
     const url = `${this.apiUrl}/region/${region}`
-    console.log(url)
     return this.http.get<Country[]>(url);
   }
 

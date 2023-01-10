@@ -12,6 +12,32 @@
     </div>
 </div>
 
+<ul
+    class="list-group"
+    *ngIf="mostrarSugerencias"
+>
+    <li 
+        *ngFor="let pais of paisesSugeridos"
+        class="list-group-item list-group-item-action"
+    >
+        <a 
+            class="nav-link"
+            [routerLink]="['/pais', pais.cca2]">
+            {{pais.name.common}}
+        </a>
+    </li>
+    <li 
+        class="list-group-item list-group-item-action"
+    >
+        <a 
+            class="nav-link"
+            (click)="buscarSugerido(termino)"
+        >
+            Buscar "{{ termino }}"
+        </a>
+    </li>
+</ul>
+
 <hr>
 
 <div
